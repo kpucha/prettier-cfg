@@ -1,17 +1,24 @@
-steps:
-- uses: actions/checkout@v3
-- uses: actions/setup-node@v3
-  with:
-    node-version: '14.x'
-    registry-url: 'https://registry.npmjs.org'
-    scope: '@kpucha'
-- run: npm ci
-- run: npm publish
-  env:
-    NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-- uses: actions/setup-node@v3
-  with:
-    registry-url: 'https://npm.pkg.github.com'
-- run: npm publish
-  env:
-    NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+name: Publish Packages npmjs & GPR
+on:
+  release:
+    types: [created]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '14.x'
+        registry-url: 'https://registry.npmjs.org'
+        scope: '@kpucha'
+    - run: npm ci
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - uses: actions/setup-node@v3
+      with:
+        registry-url: 'https://npm.pkg.github.com'
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
