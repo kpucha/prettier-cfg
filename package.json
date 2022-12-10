@@ -7,9 +7,6 @@
     "type": "git",
     "url": "https://github.com/kpucha/prettier-cfg.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/kpucha"
-  },
   "funding": [
     { 
       "type": "github",
@@ -29,7 +26,7 @@
     "Config",
     "Github"  
   ],
-  "version": "v0.0.1-alpha",
+  "version": "v1.0.0",
   "license": "MIT",
   "private": false,
   "sideEffects": false
