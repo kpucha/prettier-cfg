@@ -1,0 +1,36 @@
+{
+  "author": "alcala28043 <alcala28043@gmail.com> (https://github.com/alcala28043)",
+  "homepage": "https://kpucha.dev",
+  "name": "@kpucha/prettier-cfg",
+  "description": "Kpucha's Prettier configuration",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kpucha/prettier-cfg.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/kpucha"
+  },
+  "funding": [
+    { 
+      "type": "github",
+      "url": "https://github.com/sponsors/alcala28043",
+    },
+    { 
+      "type": "ko-fi",
+      "url": "https://ko-fi.com/alcala28043",
+    },
+    { 
+      "type": "buymeacoffee",
+      "url": "https://buymeacoffee.com/alcala28043",
+    }
+  ],
+  "keywords": [
+    "Prettier",  
+    "Config",
+    "Github"  
+  ],
+  "version": "0.0.1-alpha",
+  "license": "MIT",
+  "private": false,
+  "sideEffects": false
+}
