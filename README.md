@@ -1,5 +1,5 @@
 # @kpucha/prettier-cfg
-Kpucha's Prettier Config
+Kpucha's Prettier configuration package
 
 ## Usage
 
