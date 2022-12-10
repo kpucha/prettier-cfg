@@ -29,7 +29,7 @@
     "Config",
     "Github"  
   ],
-  "version": "0.0.1-alpha",
+  "version": "v0.0.1-alpha",
   "license": "MIT",
   "private": false,
   "sideEffects": false
