@@ -7,10 +7,8 @@ on:
     types: [created]
 jobs:
   publish:
+    name: Publish npm package at npmjs registry
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -33,17 +31,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+          scope: '@kpucha'
 
       - name: Install npm      
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm i
         
-      - name: Set package scope
-        run: npm config set scope @kpucha
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        
       - name: Publish package
-        run: npm publish @kpucha/prettier-cfg
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
