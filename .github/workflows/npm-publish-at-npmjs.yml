@@ -38,7 +38,12 @@ jobs:
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm i
         
+      - name: Set package scope
+        run: npm config set scope @kpucha
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        
       - name: Publish package
-        run: npm publish --access=public @kpucha/prettier-cfg
+        run: npm publish @kpucha/prettier-cfg
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
